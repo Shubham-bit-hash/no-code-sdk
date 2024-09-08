@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No-Code SDK for Non-techies</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .builder-area {
+      width: 80%;
+      height: 500px;
+      margin: 20px auto;
+      border: 2px dashed #ccc;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+    .components {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    .component {
+      padding: 10px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      cursor: grab;
+    }
+    .dropped-component {
+      border: 1px solid #333;
+      padding: 20px;
+      margin: 10px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>No-Code SDK for Non-techies</h1>
+  <div>
+    <label for="store-name">Enter Store Name:</label>
+    <input type="text" id="store-name" placeholder="My Awesome Store" />
+  </div>
+  <div class="components">
+    <div class="component" draggable="true" data-component="order-form">Order Form</div>
+    <div class="component" draggable="true" data-component="payment-gateway">Payment Gateway</div>
+    <div class="component" draggable="true" data-component="invoice">Create Invoice</div>
+  </div>
+
+  <div class="builder-area" id="builder-area">
+    <p>Drag components here to build your store</p>
+  </div>
+
+  <!-- Export Store Button -->
+  <button id="export-store">Export Store</button>
+
+  <!-- Include JSZip library for exporting ZIP files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
